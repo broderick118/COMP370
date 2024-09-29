@@ -1,0 +1,21 @@
+grep -Eo "^[\"][^\"]*[\"],[\"][^\"]*[\"],[\"][^\"]*[\"]" dialog.csv | grep -Eo "[\"][^\"]*[\"]$" | sort --unique
+this outputs the name of the character speaking in each line
+
+Twilight Sparkle, Rarity, Pinkie Pie, Rainbow Dash, Fluttershy, Applejack
+find number of lines solo or duo
+grep -Eo "^[\"][^\"]*[\"],[\"][^\"]*[\"],[\"][^\"]*[\"]" dialog.csv | grep -Eo "[\"][^\"]*Applejack[^\"]*[\"]$" | grep -Evc "sans|except"
+
+number of exclusion mentions
+grep -Eo "^[\"][^\"]*[\"],[\"][^\"]*[\"],[\"][^\"]*[\"]" dialog.csv | grep -Eo "[\"][^\"]*charname[^\"]*[\"]$" | grep -Ec "sans|except"
+
+number of group mentions
+grep -Eo "^[\"][^\"]*[\"],[\"][^\"]*[\"],[\"][^\"]*[\"]" dialog.csv | grep -Eoc "[\"]All[^\"]*[\"]$|[\"]Main cast[^\"]*[\"]$"
+
+Twilight Sparkle= 4695 - 8 + 82=4769
+Rarity= 2599 - 8 + 82=2763
+Pinkie Pie= 2878 - 2 + 82=2958
+Rainbow Dash= 3144 - 1 + 82=3225
+Fluttershy= 2110 - 6 + 82=2186
+Applejack= 2748 - 1 + 82=2829
+all = 82
+36859
