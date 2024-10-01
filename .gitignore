@@ -3,3 +3,6 @@
 
 #ignore files starting with nyc_
 nyc_*.*
+
+#ignore argparse_practice
+argparse_practice.py
