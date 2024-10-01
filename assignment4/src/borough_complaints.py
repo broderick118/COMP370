@@ -1,6 +1,6 @@
 import os.path
 from argparse import ArgumentParser
-import csv
+import pandas as pd # type: ignore
 
 def main():
     parser = ArgumentParser()
@@ -16,6 +16,9 @@ def main():
     output = args.output
 
 
+def process_csv (filename, startdate, enddate, output):
+    filepath = os.path.dirname(__file__)[:-3] + "data/" + filename
+    dataframe = pd.read_csv(filepath)
 
 if (__name__ == "__main__"):
     main()
