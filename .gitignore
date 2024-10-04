@@ -4,6 +4,7 @@
 #ignore files starting with nyc_
 nyc_*.*
 
-#ignore argparse_practice and datetimes
+#ignore argparse_practice and datetimes and dataframes
 argparse_practice.py
 datetimes.py
+dataframes.py
